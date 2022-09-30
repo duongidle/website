@@ -1,0 +1,110 @@
+* {
+  margin: auto;
+  box-sizing: border-box;
+  color: rgb(80, 78, 78);
+}
+@font-face {
+  font-family: BeVietnamPro;
+  src: url(../fonts/BeVietnamPro-Regular.ttf);
+}
+.font-1 {
+  font-family: BeVietnamPro;
+}
+:root {
+  --main-color: rgba(200, 219, 253, 0.6);
+  --main-color2: rgba(253, 200, 237, 0.6);
+}
+.main-color {
+  background-color: var(--main-color) !important;
+  border-radius: 15px;
+}
+.shadow {
+  box-shadow: 20px 20px 20px rgb(164, 24, 24);
+}
+.container-fluid {
+  background: rgba(200, 219, 253, 0.6);
+  background-size: cover;
+  opacity: 0.96;
+}
+.main {
+  height: 100vh;
+  min-height: 100vh;
+  width: 90vw;
+  max-width: 90vw;
+}
+.h-size {
+  height: 40%;
+  min-height: 25%;
+}
+.h-size_1 {
+  height: 15%;
+  min-height: 10%;
+}
+input {
+  background-color: rgba(200, 219, 253, 0.05);
+  outline: none;
+  border: none;
+  font-size: 150%;
+  border-bottom: 2px solid white;
+  padding-right: 30px !important;
+}
+
+.icon-check {
+  z-index: 10;
+  top: 25%;
+  right: 5% !important;
+}
+input:hover {
+  border-bottom: 2px solid rgb(4, 25, 67);
+}
+h1 {
+  font-size: 2.5rem;
+}
+a:link,
+a:visited {
+  color: (internal value);
+  text-decoration: none;
+  cursor: auto;
+}
+
+a:link:active,
+a:visited:active {
+  color: (internal value);
+}
+@media (min-width: 320px) {
+  html {
+    font-size: 40%;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+  .size-form {
+    width: 100% !important;
+  }
+}
+@media (min-width: 1023px) {
+  html {
+    font-size: 90% !important;
+  }
+}
+@media (max-height: 440px) {
+  html {
+    font-size: 30%;
+  }
+}
+/* Sign up */
+
+select,
+option {
+  background-color: rgba(200, 219, 253, 0.05);
+  outline: none;
+  padding: 5px;
+}
+@media (max-width: 1024px) {
+  .size-sign-up,
+  .main-color2 {
+    width: 150% !important;
+  }
+}
