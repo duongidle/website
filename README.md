@@ -10,6 +10,6 @@ python main.py
 
 http://127.0.0.1:5000
 
-# Test at Test
+# Test at
 
-v0.1.2
+tests.py
