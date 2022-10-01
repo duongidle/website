@@ -13,10 +13,14 @@ class User(UserMixin, db.Model):
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
     phone_number = db.Column(db.String(30))
+    is_admin = db.Column(db.Boolean, default=False)
 
-    def __repr__(self):
-        return '<Email {}>'.format(self.email)
+    @property
+    def password(self):
+        # Prevent password from bring accessed
+        raise AttributeError('password is not a readable attribute.')
 
+    @password.setter
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
 
@@ -32,6 +36,9 @@ class User(UserMixin, db.Model):
         return jwt.encode(
             {'reset_password': self.id, 'exp': time() + expires_in},
             current_app.config['SECRET_KEY'], algorithm='HS256').decode('utf-8')
+    
+    def __repr__(self):
+        return '<Email {}>'.format(self.email)
 
     @staticmethod
     def verify_reset_password_token(token):

@@ -13,7 +13,7 @@ from app.auth.email import send_password_reset_email
 @bp.route('/login', methods=['POST', 'GET'])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('index'))
+        return redirect(url_for('main.index'))
 
     if request.method == "POST":
         details = request.form
