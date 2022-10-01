@@ -4,7 +4,7 @@ E-Commerce integrated Data Analysis
 
 # Running the app
 
-python main.py
+running with venvy
 
 # View at
 
