@@ -1,6 +1,6 @@
 # ANACOM
 
-v0.1
+E-Commerce integrated Data Analysis
 
 # Running the app
 
