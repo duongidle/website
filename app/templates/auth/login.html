@@ -10,7 +10,7 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/style.css') }}"
     />
-    <title>Sign In</title>
+    <title>Dang nhap ANACOM</title>
 </head>
 <body>
     <div class="container-fluid p-0 d-flex justify-content-center ">
@@ -24,7 +24,7 @@
                 <div class="d-flex col-6 h-100 justify-content-center align-content-center bg-white rounded-3 shadow">
                     <div class="row h-50">
                     <h1 class="my-2 p-5 py-4 fw-bold text-dark font-1">Log in</h1>
-                    <form class="form-login w-75 h-75 mt-4 d-flex " action="/login" method="POST">
+                    <form class="form-login w-75 h-75 mt-4 d-flex " name="login" action="/login" method="POST">
                         
                         <div class="row h-75 font-1">
 
@@ -47,7 +47,7 @@
                                 </div>
 
                                 <div class="col-12 d-flex justify-content-center">
-                                    <button type="submit" id="Sign In" name="Sign In" class="btn w-75 p-2 fs-5 mt-3 btn-warning text-white" >Log in</button>
+                                    <button type="submit" id="Sign In" value="Sign In" class="btn w-75 p-2 fs-5 mt-3 btn-warning text-white" >Log in</button>
                                 </div>
 
                                 <div class="col-12 mt-2 mb-5 d-flex justify-content-center" style="font-size: 0.9rem;">

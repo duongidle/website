@@ -11,7 +11,7 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/style.css') }}"
     />
-    <title>Sign Up</title>
+    <title>Dang ky ANACOM</title>
 </head>
 <body>
     <div class="container-fluid p-0 d-flex justify-content-center ">
@@ -20,7 +20,7 @@
                 
                 <div class="d-flex col-6 h-100 justify-content-center align-content-center bg-white shadow">
                     <div class="row h-75">
-                    <h1 class="my-2 p-5 py-4 fw-bold text-dark font-1">Sign up</h1>
+                    <h1 class="my-2 p-5 py-4 fw-bold text-dark font-1">Register</h1>
                     <form class="form-signup h-75 d-flex" action="/register" method="POST">
                         
                         <div class="row mb-1 font-1">
@@ -54,7 +54,15 @@
                                 </select>
                             </div>
 
-                            <div class="other col-12 w-75 fs-6 text-start mt-5 mb-2">
+                            {% with messages=get_flashed_messages(with_categories=true) %}
+                                {% for category, message in messages %}
+                                <div class='alert alert-{{category}} text-center alert-dismissible fade show p-0 mb-4'>
+                                    {{ message }}
+                                </div>
+                                {% endfor %}
+                                {% endwith %}
+
+                            <div class="other col-12 w-75 fs-6 text-start mt-1 mb-2">
                                 <span>By click you agree with our <a href="">Term of use</a></span>
                             </div>
 
