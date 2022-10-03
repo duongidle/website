@@ -10,7 +10,7 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/style.css') }}"
     />
-    <title>Dang nhap ANACOM</title>
+    <title>ANACOM - Đăng nhập</title>
 </head>
 <body>
     <div class="container-fluid p-0 d-flex justify-content-center ">
@@ -23,21 +23,21 @@
     
                 <div class="d-flex col-6 h-100 justify-content-center align-content-center bg-white rounded-3 shadow">
                     <div class="row h-50">
-                    <h1 class="my-2 p-5 py-4 fw-bold text-dark font-1">Log in</h1>
+                    <h1 class="my-2 p-5 py-4 fw-bold text-dark font-1">Đăng nhập</h1>
                     <form class="form-login w-75 h-75 mt-4 d-flex " name="login" action="/login" method="POST">
                         
                         <div class="row h-75 font-1">
 
                                 <div class="col-12 text-end" style="font-size: 0.9rem;">
-                                    <p>Have no account? <a href="{{ url_for('auth.register') }}" >Sign up.</a></p>
+                                    <p>Chưa có tài khoản? <a href="{{ url_for('auth.register') }}" >Đăng ký.</a></p>
                                 </div>
 
                                 <div class="col-12 input-group h-size text-center mb-3">
-                                    <input type="text" id="Email" name="Email" class="form-control" placeholder="E-mail" aria-label="E-mail" required>
+                                    <input type="text" id="Email" name="Email" class="form-control" placeholder="Nhập E-mail của bạn" aria-label="E-mail" required>
                                 </div>
 
                                 <div class="input-group h-size text-center mb-3" id="show_hide_password">
-                                    <input type="password" id="Password" name="Password" class="form-control position-relative"   placeholder="Password" aria-label="Password" required>
+                                    <input type="password" id="Password" name="Password" class="form-control position-relative"   placeholder="Nhập mật khẩu của bạn" aria-label="Password" required>
                                     <span class="icon-check my-2 position-absolute end-0  " href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
                                 </div>
 
@@ -47,15 +47,15 @@
                                 </div>
 
                                 <div class="col-12 d-flex justify-content-center">
-                                    <button type="submit" id="Sign In" value="Sign In" class="btn w-75 p-2 fs-5 mt-3 btn-warning text-white" >Log in</button>
+                                    <button type="submit" id="Sign In" value="Sign In" class="btn w-75 p-2 fs-5 mt-3 btn-warning text-white" >Đăng nhập</button>
                                 </div>
 
                                 <div class="col-12 mt-2 mb-5 d-flex justify-content-center" style="font-size: 0.9rem;">
-                                    <a href="{{ url_for('auth.reset_password_request') }}" class="">Forgot password?</a>
+                                    <a href="{{ url_for('auth.reset_password_request') }}" class="">Quên mật khẩu?</a>
                                 </div>
 
                                 <div class="other d-flex col-12 text-center justify-content-center mb-3">
-                                    <p class="m-1 p-2" style="font-size: 0.9rem;">or Sign in with</p>
+                                    <p class="m-1 p-2" style="font-size: 0.9rem;">hoặc bằng</p>
                                     <button class=" btn col-4 btn-outline-primary p-2 ">Facebook</button>
                                     <button class=" btn col-4 btn-outline-danger p-2 mx-1">Google</button>
                                 </div>
