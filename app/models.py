@@ -6,6 +6,8 @@ from flask_login import UserMixin
 from werkzeug.security import generate_password_hash, check_password_hash
 from hashlib import md5
 import jwt
+from flask_sqlalchemy import SQLAlchemy
+
 
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)

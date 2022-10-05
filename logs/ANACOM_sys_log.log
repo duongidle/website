@@ -1,4 +1,4 @@
-2022-10-03 12:11:56,971 ERROR: Exception on /login [POST] [in /home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py:1741]
+2022-10-05 22:05:29,645 ERROR: Exception on /homepage [GET] [in /home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -8,8 +8,10 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/home/duonglieumoc/OneDrive/python_program/website/app/auth/routes.py", line 26, in login
-    return render_template('index.html', user=current_user)
+  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/duonglieumoc/OneDrive/python_program/website/app/main/routes.py", line 28, in homepage
+    return render_template('home.html')
   File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
     return _render(app, template, context)
   File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/templating.py", line 130, in _render
@@ -18,49 +20,21 @@ Traceback (most recent call last):
     self.environment.handle_exception()
   File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "/home/duonglieumoc/OneDrive/python_program/website/app/templates/index.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/duonglieumoc/OneDrive/python_program/website/app/templates/base.html", line 36, in top-level template code
-    <a class="navbar-brand topnav" href="{{ url_for('home.homepage') }}"
+  File "/home/duonglieumoc/OneDrive/python_program/website/app/templates/home.html", line 1, in top-level template code
+    {% extends "base.html" %} {% block content %}
+  File "/home/duonglieumoc/OneDrive/python_program/website/app/templates/base.html", line 27, in top-level template code
+    <a href="{{ url_for('auth.signup') }}" class="navbar-item">
   File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py", line 2031, in url_for
     return self.handle_url_build_error(error, endpoint, values)
   File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py", line 2020, in url_for
     rv = url_adapter.build(  # type: ignore[union-attr]
   File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/werkzeug/routing/map.py", line 917, in build
     raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'home.homepage'. Did you mean 'auth.reset_password' instead?
-2022-10-03 12:12:12,876 ERROR: Exception on /login [POST] [in /home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/home/duonglieumoc/OneDrive/python_program/website/app/auth/routes.py", line 26, in login
-    return render_template('index.html', user=current_user)
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
-    return _render(app, template, context)
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/templating.py", line 130, in _render
-    rv = template.render(context)
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
-    self.environment.handle_exception()
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/duonglieumoc/OneDrive/python_program/website/app/templates/index.html", line 1, in top-level template code
-    abcd
-  File "/home/duonglieumoc/OneDrive/python_program/website/app/templates/base.html", line 36, in top-level template code
-    <a class="navbar-brand topnav" href="{{ url_for('home.homepage') }}"
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py", line 2031, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py", line 2020, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/werkzeug/routing/map.py", line 917, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'home.homepage'. Did you mean 'auth.reset_password' instead?
-2022-10-03 12:12:19,608 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:78]
-2022-10-03 12:27:55,495 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:78]
-2022-10-03 12:29:47,024 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:78]
-2022-10-03 12:32:28,544 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:78]
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'auth.signup'. Did you mean 'auth.login' instead?
+2022-10-05 22:06:17,653 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:78]
+2022-10-05 22:06:38,521 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:78]
+2022-10-05 22:21:21,182 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:78]
+2022-10-05 22:24:59,099 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:78]
+2022-10-05 22:27:01,914 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:78]
+2022-10-05 22:31:32,792 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:78]
+2022-10-05 22:42:49,296 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:78]

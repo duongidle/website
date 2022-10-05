@@ -22,6 +22,11 @@ def before_request():
 def review():
     return render_template('review/review.html')
 
+@bp.route('/homepage', methods=['GET', 'POST'])
+@login_required
+def homepage():
+    return render_template('home.html', tittle="Home")
+
 @bp.route('/about', methods=['GET', 'POST'])
 def about():
     return render_template('review/about.html')
@@ -29,11 +34,6 @@ def about():
 @bp.route('/term', methods=['GET', 'POST'])
 def term():
     return render_template('review/term.html')
-
-@bp.route('/homepage', methods=['GET', 'POST'])
-@login_required
-def index():
-    return render_template('index.html', title=_('Home'))
 
 @bp.route('/dashboard', methods=['GET', 'POST'])
 @login_required
