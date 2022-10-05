@@ -23,7 +23,10 @@ def login():
         if user:
             if check_password_hash(user.password_hash, password):
                 login_user(user)
-                return redirect(url_for('main.homepage'))
+                next_page = request.args.get('next')
+                if not next_page or url_parse(next_page).netloc != '':
+                    next_page = url_for('main.homepage')
+                return redirect(next_page)
             else:
                 flash('Mat khau khong dung!', category='error')
         else:
@@ -40,7 +43,7 @@ def logout():
 @bp.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
-        return redirect(url_for('main.index'))
+        return redirect(url_for('main.homepage'))
 
     if request.method == "POST":
         details = request.form
@@ -68,7 +71,7 @@ def register():
             db.session.add(new_user)
             db.session.commit()
             flash('Tai khoan da duoc tao, vui long dang nhap lai!', category='success')
-            return redirect(url_for('login'))
+            return render_template('auth/login.html')
     return render_template('auth/register.html', user=current_user)
 
 
