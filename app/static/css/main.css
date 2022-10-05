@@ -5,6 +5,16 @@
   src: url(../fonts/BeVietnamPro-Regular.ttf);
 }
 
+:root {
+  --main-color: rgba(200, 219, 253, 0.6);
+  --main-color2: rgba(253, 200, 237, 0.6);
+}
+
+.main-color {
+  background-color: var(--main-color) !important;
+  border-radius: 15px;
+}
+
 html,
 body,
 div,
