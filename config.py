@@ -5,7 +5,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 load_dotenv(os.path.join(basedir, '.env'))
 
 class Config(object):
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'soiztoguess'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'sqlite:///' + os.path.join(basedir, 'web_sys.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
@@ -15,6 +15,7 @@ class Config(object):
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['bansao.ly.2@gmail.com']
+    SECURITY_EMAIL_SENDER = 'bansao.ly.2@gmail.com'
     POSTS_PER_PAGE = 25
     LANGUAGES = ['en', 'vi']
     MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')

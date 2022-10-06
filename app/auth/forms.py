@@ -8,7 +8,7 @@ class ResetPasswordRequestForm(FlaskForm):
     submit = SubmitField()
 
 class ResetPasswordForm(FlaskForm):
-    password = PasswordField(('Password'), validators=[DataRequired()])
+    password = PasswordField(('Nhập mật khẩu mới'), validators=[DataRequired()])
     password2 = PasswordField(
-        ('Repeat Password'), validators=[DataRequired(), EqualTo('password')])
-    submit = SubmitField(('Request Password Reset'))
+        ('Nhập lại mật khẩu mới'), validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField(('SUBMIT'))

@@ -71,7 +71,7 @@ def register():
             db.session.add(new_user)
             db.session.commit()
             flash('Tài khoản đã được tạo, vui lòng đăng nhập lại!', category='success')
-            return render_template('auth/login.html')
+            return redirect(url_for('auth.login'))
     return render_template('auth/register.html', user=current_user)
 
 
@@ -86,8 +86,8 @@ def reset_password_request():
             send_password_reset_email(user)
         flash('Vui lòng kiểm tra email. Nếu không nhận được phản hồi sau 10 phút, vui lòng liên hệ quản trị!')
         return redirect(url_for('auth.login'))
-    return render_template('auth/reset_password_request.html',
-                           title=('Reset Password'), form=form)
+        
+    return render_template('auth/reset_password_request.html', form=form)
 
 
 @bp.route('/reset_password/<token>', methods=['GET', 'POST'])
