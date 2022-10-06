@@ -1,4 +1,4 @@
-2022-10-06 02:51:05,985 ERROR: Exception on /homepage [GET] [in /home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py:1741]
+2022-10-06 18:21:37,779 ERROR: Exception on /reset_password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNldF9wYXNzd29yZCI6NywiZXhwIjoxNjY1MDU1ODc3Ljk2MDc2ODJ9.WpzMveR3F5nbdRcRThWQVHv9FConLg3FdUeixG9XXFk [GET] [in /home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -8,10 +8,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/home/duonglieumoc/OneDrive/python_program/website/app/main/routes.py", line 24, in homepage
-    return render_template('home.html')
+  File "/home/duonglieumoc/OneDrive/python_program/website/app/auth/routes.py", line 106, in reset_password
+    return render_template('auth/reset_password.html', form=form)
   File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
     return _render(app, template, context)
   File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/templating.py", line 130, in _render
@@ -20,15 +18,13 @@ Traceback (most recent call last):
     self.environment.handle_exception()
   File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "/home/duonglieumoc/OneDrive/python_program/website/app/templates/home.html", line 1, in top-level template code
-    {% extends "base.html" %} {% block content %} asdasd {% endblock %}
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/duonglieumoc/OneDrive/python_program/website/app/templates/base.html", line 54, in template
-    {{ 'username', username=current_user.username }}
-jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got '='
-2022-10-06 02:51:28,284 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-06 02:51:31,409 ERROR: Exception on /homepage [GET] [in /home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py:1741]
+  File "/home/duonglieumoc/OneDrive/python_program/website/app/templates/auth/reset_password.html", line 34, in top-level template code
+    {{ wtf.quick_form(form, size=50) }}
+TypeError: macro 'quick_form' takes no keyword argument 'size'
+2022-10-06 18:22:01,638 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-06 18:28:58,162 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-06 18:52:02,045 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-06 18:53:52,294 ERROR: Exception on /reset_password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXNldF9wYXNzd29yZCI6NywiZXhwIjoxNjY1MDU3NzU2LjU3Mzk1fQ.1obVwU81lQDuXN6Gh-ZFZxxllKA_R6vyqMTDXryg3QE [GET] [in /home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -38,10 +34,8 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/home/duonglieumoc/OneDrive/python_program/website/app/main/routes.py", line 24, in homepage
-    return render_template('home.html')
+  File "/home/duonglieumoc/OneDrive/python_program/website/app/auth/routes.py", line 106, in reset_password
+    return render_template('auth/reset_password.html', form=form)
   File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
     return _render(app, template, context)
   File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/templating.py", line 130, in _render
@@ -50,30 +44,13 @@ Traceback (most recent call last):
     self.environment.handle_exception()
   File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "/home/duonglieumoc/OneDrive/python_program/website/app/templates/home.html", line 1, in top-level template code
-    {% extends "base.html" %} {% block content %} asdasd {% endblock %}
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/duonglieumoc/OneDrive/python_program/website/app/templates/base.html", line 54, in template
-    {{ ('username', username=current_user.username) }}
-jinja2.exceptions.TemplateSyntaxError: expected token ')', got '='
-2022-10-06 02:51:55,691 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-06 02:52:47,518 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-06 02:54:26,463 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-06 02:55:56,321 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-06 02:56:39,353 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-06 02:57:38,353 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-06 02:59:56,556 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-06 03:00:59,833 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-06 03:02:29,066 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-06 03:03:31,088 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-06 03:03:45,505 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-06 03:04:22,819 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-06 03:04:41,997 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-06 03:06:39,982 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-06 03:06:56,973 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-06 03:08:33,289 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-06 03:09:42,352 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-06 03:10:36,556 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-06 03:14:14,708 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-06 03:14:39,509 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+  File "/home/duonglieumoc/OneDrive/python_program/website/app/templates/auth/reset_password.html", line 43, in top-level template code
+    {% for error in form.email.errors %}
+  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/jinja2/environment.py", line 485, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'app.auth.forms.ResetPasswordForm object' has no attribute 'email'
+2022-10-06 18:54:22,293 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-06 19:01:56,258 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-06 19:04:04,496 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-06 19:16:29,208 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-06 19:35:23,114 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]

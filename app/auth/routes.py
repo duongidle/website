@@ -28,9 +28,9 @@ def login():
                     next_page = url_for('main.homepage')
                 return redirect(next_page)
             else:
-                flash('Mat khau khong dung!', category='error')
+                flash('Mật khẩu không đúng!', category='error')
         else:
-            flash('Nguoi dung khong ton tai!', category='error')
+            flash('Người dùng không tồn tại.', category='error')
             
     return render_template('auth/login.html')
 
@@ -55,23 +55,23 @@ def register():
         
         user = User.query.filter_by(email=email).first()
         if user:
-            flash('Email da ton tai.', category='error')
+            flash('Email đã tồn tại.', category='error')
         elif len(email) < 4:
-            flash('Email khong chinh xac.', category='error')
+            flash('Email không chính xác.', category='error')
         elif len(name) < 2:
-            flash('Ten khong chinh xac.', category='error')
+            flash('Tên không chính xác.', category='error')
         elif password1 != password2:
-            flash('Mat khau khong trung khop.', category='error')
+            flash('Mật khẩu không trùng khớp.', category='error')
         elif len(password1) < 7:
-            flash('Mat khau khong hop le.', category='error')
+            flash('Mật khẩu không hợp lệ.', category='error')
         elif len(phoneNumber) < 9:
-            flash('So dien thoai khong hop le.', category='error')
+            flash('Số điện thoại không hợp lệ.', category='error')
         else:
             new_user = User(email=email, username=name, password_hash=generate_password_hash(password1, method='sha256'), phone_number = phoneNumber)
             db.session.add(new_user)
             db.session.commit()
-            flash('Tai khoan da duoc tao, vui long dang nhap lai!', category='success')
-            return render_template('auth/login.html')
+            flash('Tài khoản đã được tạo, vui lòng đăng nhập lại!', category='success')
+            return redirect(url_for('auth.login'))
     return render_template('auth/register.html', user=current_user)
 
 
@@ -84,11 +84,10 @@ def reset_password_request():
         user = User.query.filter_by(email=form.email.data).first()
         if user:
             send_password_reset_email(user)
-        flash(
-            _('Check your email for the instructions to reset your password'))
+        flash('Vui lòng kiểm tra email. Nếu không nhận được phản hồi sau 10 phút, vui lòng liên hệ quản trị!')
         return redirect(url_for('auth.login'))
-    return render_template('auth/reset_password_request.html',
-                           title=_('Reset Password'), form=form)
+        
+    return render_template('auth/reset_password_request.html', form=form)
 
 
 @bp.route('/reset_password/<token>', methods=['GET', 'POST'])
@@ -102,7 +101,7 @@ def reset_password(token):
     if form.validate_on_submit():
         user.set_password(form.password.data)
         db.session.commit()
-        flash(_('Your password has been reset.'))
+        flash('Mật khẩu của bạn đã được khôi phục.')
         return redirect(url_for('auth.login'))
     return render_template('auth/reset_password.html', form=form)
 
