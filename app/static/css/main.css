@@ -8,10 +8,11 @@
 :root {
   --main-color: rgba(200, 219, 253, 0.6);
   --main-color2: rgba(253, 200, 237, 0.6);
+  --main-color3: #6f42c1;
 }
 
 .main-color {
-  background-color: var(--main-color) !important;
+  background-color: white !important;
   border-radius: 15px;
 }
 
@@ -200,7 +201,7 @@ html {
 }
 
 body {
-  background: #312450;
+  background: var(--main-color3);
 }
 
 body.is-preload *,

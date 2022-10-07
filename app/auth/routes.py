@@ -92,8 +92,6 @@ def reset_password_request():
 
 @bp.route('/reset_password/<token>', methods=['GET', 'POST'])
 def reset_password(token):
-    if current_user.is_authenticated:
-        return redirect(url_for('main.homepage'))
     user = User.verify_reset_password_token(token)
     if not user:
         return redirect(url_for('main.homepage'))
@@ -101,7 +99,18 @@ def reset_password(token):
     if form.validate_on_submit():
         user.set_password(form.password.data)
         db.session.commit()
-        flash('Mật khẩu của bạn đã được khôi phục.')
+        flash('Mật khẩu của bạn đã được thay đổi.')
         return redirect(url_for('auth.login'))
     return render_template('auth/reset_password.html', form=form)
 
+@bp.route('change_password', methods=['GET', 'POST'])
+def change_password():
+    form = ResetPasswordRequestForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        if user:
+            send_password_reset_email(user)
+        flash('Một email xác nhận đã được gửi đến bạn. Vui lòng kiểm tra email và làm theo hướng dẫn!!')
+        return redirect(url_for('main.homepage'))
+        
+    return render_template('auth/reset_password_request.html', form=form)

@@ -13,16 +13,17 @@
 :root {
   --main-color: rgba(200, 219, 253, 0.6);
   --main-color2: rgba(253, 200, 237, 0.6);
+  --main-color3: #6f42c1;
 }
 .main-color {
-  background-color: var(--main-color) !important;
+  background-color: var(--main-color3) !important;
   border-radius: 15px;
 }
 .shadow {
   box-shadow: 20px 20px 20px rgb(164, 24, 24);
 }
 .container-fluid {
-  background: rgba(200, 219, 253, 0.6);
+  background: var(--main-color3);
   background-size: cover;
   opacity: 0.96;
 }
