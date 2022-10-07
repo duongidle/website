@@ -12,3 +12,4 @@ class ResetPasswordForm(FlaskForm):
     password2 = PasswordField(
         ('Nhập lại mật khẩu mới'), validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField(('SUBMIT'))
+
