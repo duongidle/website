@@ -15,6 +15,7 @@
   --main-color2: rgba(253, 200, 237, 0.6);
   --main-color3: #6f42c1;
 }
+
 .main-color {
   background-color: var(--main-color3) !important;
   border-radius: 15px;
