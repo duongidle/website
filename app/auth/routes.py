@@ -103,7 +103,7 @@ def reset_password(token):
         return redirect(url_for('auth.login'))
     return render_template('auth/reset_password.html', form=form)
 
-@bp.route('change_password', methods=['GET', 'POST'])
+@bp.route('/change_password', methods=['GET', 'POST'])
 def change_password():
     form = ResetPasswordRequestForm()
     if form.validate_on_submit():

@@ -1,45 +1,52 @@
-2022-10-07 09:25:01,898 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-07 09:29:07,855 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-07 09:29:14,742 ERROR: Exception on /user/Trần Dương [GET] [in /home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py:1741]
-Traceback (most recent call last):
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/home/duonglieumoc/OneDrive/python_program/website/app/main/routes.py", line 43, in user
-    return render_template('user.html', user=user)
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/templating.py", line 147, in render_template
-    return _render(app, template, context)
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/templating.py", line 130, in _render
-    rv = template.render(context)
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/jinja2/environment.py", line 1301, in render
-    self.environment.handle_exception()
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/jinja2/environment.py", line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/duonglieumoc/OneDrive/python_program/website/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html" %} {% block content %}
-  File "/home/duonglieumoc/OneDrive/python_program/website/app/templates/base.html", line 60, in top-level template code
-    {% block content %} {% endblock %}
-  File "/home/duonglieumoc/OneDrive/python_program/website/app/templates/user.html", line 2, in block 'content'
-    <a href="{{ url_for('auth.reset_password') }}"><h3>Reset password</h3></a>
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py", line 2031, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/flask/app.py", line 2020, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-  File "/home/duonglieumoc/OneDrive/python_program/website/venvy/lib/python3.10/site-packages/werkzeug/routing/map.py", line 917, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'auth.reset_password'. Did you forget to specify values ['token']?
-2022-10-07 09:41:39,455 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-07 09:47:08,608 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-07 09:50:04,628 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-07 09:54:08,927 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-07 09:56:05,026 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-07 09:58:46,714 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-07 10:00:13,686 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
-2022-10-07 10:07:30,476 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:28:11,274 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:30:40,587 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:31:01,317 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:32:18,218 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:32:42,946 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:34:06,962 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:34:23,703 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:34:44,019 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:37:56,934 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:38:48,447 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:42:42,999 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:43:27,082 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:45:58,291 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:47:35,009 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:50:23,379 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:53:57,950 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:55:29,241 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:56:06,824 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:56:23,614 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:56:43,031 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:57:00,245 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:58:28,693 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:58:54,397 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 03:59:28,636 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 04:11:02,554 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 04:11:44,681 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 04:12:36,671 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 04:15:33,884 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 04:36:53,925 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 04:37:53,235 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 04:44:48,155 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 04:45:44,944 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 04:46:50,124 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 04:47:25,725 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 04:48:05,112 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 04:48:31,395 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 04:48:57,946 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 04:49:18,490 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 04:53:07,091 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 04:54:30,701 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 04:54:49,409 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 04:55:39,482 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 04:56:28,442 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 04:57:27,503 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 04:59:13,754 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 05:00:33,671 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 05:01:54,617 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 05:12:23,738 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 05:13:26,982 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 05:14:31,999 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 05:14:49,724 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]
+2022-10-10 05:16:29,130 INFO: ANACOM logs [in /home/duonglieumoc/OneDrive/python_program/website/app/__init__.py:75]

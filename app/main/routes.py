@@ -36,9 +36,9 @@ def term():
 def dashboard():
     return render_template('dashboard.html')
 
-@bp.route('/user/<username>')
+@bp.route('/tool/<username>')
 @login_required
-def user(username):
+def tool(username):
     user = User.query.filter_by(username=username).first_or_404()
-    return render_template('user.html', user=user)
+    return render_template('application.html', user=user)
 
